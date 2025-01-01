@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Employee Dashboard</h1>
+    </div>
+    <div class="container">
+        <h2>Monthly Tasks Overview</h2>
+        <canvas id="taskChart" width="400" height="200"></canvas>
+
+        <h2 class="mt-5">Performance Summary</h2>
+        <canvas id="performanceChart" width="400" height="200"></canvas>
+
+        <!-- Link to open profile update page in a new tab -->
+        <div class="mt-5">
+            <a href="profile.html" target="_blank" class="btn btn-primary">Update Profile</a>
+        </div>
+    </div>
+    <footer>
+        <p>Employee Management System &copy; 2024</p>
+    </footer>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap CSS for consistent styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Employee Management System</h1>
+    </div>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-control" required>
+                <div id="usernameError" class="invalid-feedback">Please enter your username.</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" required>
+                <div id="passwordError" class="invalid-feedback">Please enter your password.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+    <footer>
+        <p>Employee Management System &copy; 2024</p>
+    </footer>
+    
+    <!-- JavaScript for form validation -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Clear previous error messages
+            document.getElementById('usernameError').style.display = 'none';
+            document.getElementById('passwordError').style.display = 'none';
+
+            // Retrieve user inputs
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            let isValid = true;
+
+            // Validate username
+            if (!username) {
+                document.getElementById('usernameError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate password
+            if (!password) {
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Implement server-side authentication here
+                // For demonstration, using hardcoded credentials
+                if (username === 'admin' && password === 'admin123') {
+                    window.location.href = 'dashboard.html';
+                } else {
+                    alert('Invalid credentials! Please try again.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
